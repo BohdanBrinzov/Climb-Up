@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="20A5395g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AspirationEntity" representedClassName="AspirationEntity" syncable="YES">
+        <attribute name="colorHexStr" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="climb" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ClimbEntity" inverseName="aspiration" inverseEntity="ClimbEntity"/>
+    </entity>
+    <entity name="ClimbEntity" representedClassName="ClimbEntity" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="quality" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="timeActive" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="timeAll" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="timeInterval" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="timeRest" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="aspiration" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AspirationEntity" inverseName="climb" inverseEntity="AspirationEntity"/>
+    </entity>
+    <elements>
+        <element name="ClimbEntity" positionX="201.6591796875" positionY="-62.20410156249994" width="128" height="163"/>
+        <element name="AspirationEntity" positionX="160" positionY="192" width="128" height="104"/>
+    </elements>
+</model>
